@@ -1,0 +1,6 @@
+---
+- id: add-jira-issue-key-to-commit-msg
+  name: JIRA issue key가 있는 브랜치의 커밋 메시지를 수정합니다
+  entry: pre_commit_hooks/add_jira_issue_key_to_commit_msg.sh
+  language: script
+  stages: [prepare-commit-msg]
