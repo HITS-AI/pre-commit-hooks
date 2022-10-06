@@ -37,4 +37,12 @@ if [ -z "$ISSUE_KEY" ]; then
     exit 0
 fi
 
-echo "$ISSUE_KEY: $(cat $COMMIT_MSG_FILE)" >$COMMIT_MSG_FILE
+TMP_MSG=$(cat $COMMIT_MSG_FILE)
+
+case "$TMP_MSG" in
+$ISSUE_KEY*)
+    exit 0
+    ;;
+esac
+
+echo "$ISSUE_KEY: $TMP_MSG" >$COMMIT_MSG_FILE
