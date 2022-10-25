@@ -30,7 +30,7 @@ while true; do
     esac
 done
 
-BRANCH_NAME=$(git symbolic-ref --short HEAD)
+BRANCH_NAME=$(git symbolic-ref --short HEAD 2>/dev/null || echo "unknown")
 ISSUE_KEY=$(echo "$BRANCH_NAME" | grep -oE "^$PROJECT_KEY-[0-9]+" || echo "")
 
 if [ -z "$ISSUE_KEY" ]; then
