@@ -9,7 +9,7 @@ default_install_hook_types:
   - ...
 repos:
   - repo: https://github.com/HITS-AI/pre-commit-hooks
-    rev: f3b3d4
+    rev: v1.0.0
     hooks:
       - id: add-jira-issue-key-to-commit-msg
         # args: ["--key", "HITS"] # 기본 키는 ONE 입니다.
